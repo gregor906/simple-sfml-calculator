@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <vector>
 #include <memory>
@@ -26,13 +26,13 @@ public:
         windowBackground = std::make_unique<sf::RectangleShape>(sf::Vector2f(400, 800));
         windowBackground->setFillColor(sf::Color::White);
 
-        const std::vector<std::string> labels = { // Список меток для кнопок
+        const std::vector<std::string> labels = { // РЎРїРёСЃРѕРє РјРµС‚РѕРє РґР»СЏ РєРЅРѕРїРѕРє
             "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-",
             "0", "C", "=", "+", "(", ")", "<<<"
         };
 
         buttons.reserve(labels.size());
-        for (size_t i = 0; i < labels.size(); ++i) { // Создаем кнопки в цикле
+        for (size_t i = 0; i < labels.size(); ++i) { // РЎРѕР·РґР°РµРј РєРЅРѕРїРєРё РІ С†РёРєР»Рµ
             buttons.emplace_back(std::make_unique<Button>(
                 labels[i], font, 24,
                 sf::Vector2f(20 + (i % 4) * 90, 300 + (i / 4) * 90),
@@ -41,7 +41,7 @@ public:
         }
     }
 
-    void handleEvent(const sf::Event& event, sf::RenderWindow& window) { // Обработка событий
+    void handleEvent(const sf::Event& event, sf::RenderWindow& window) { // РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№
         if (event.type == sf::Event::MouseButtonPressed &&
             event.mouseButton.button == sf::Mouse::Left) {
             for (const auto& button : buttons) {
@@ -62,7 +62,7 @@ public:
     }
 
 private:
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override { // Отрисовка калькулятора
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override { // РћС‚СЂРёСЃРѕРІРєР° РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР°
         states.transform *= getTransform();
         target.draw(*windowBackground, states);
         target.draw(history, states);
@@ -94,7 +94,7 @@ private:
                 input = "Error"s;
             }
         }
-        else if (text == "<<<"s) { // Удаление последнего символа
+        else if (text == "<<<"s) { // РЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЃРёРјРІРѕР»Р°
             if (!input.empty()) {
                 input.pop_back();
             }

@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <memory>
 #include <SFML/Graphics.hpp>
@@ -8,9 +8,9 @@ public:
     Button(std::string text, sf::Font& font, unsigned int characterSize,
         sf::Vector2f position, sf::Vector2f size)
         : m_rect{ std::make_unique<sf::RectangleShape>(size) },
-        m_text{ std::make_unique<sf::Text>(text, font, characterSize) } { // Создаем текст на кнопке
+        m_text{ std::make_unique<sf::Text>(text, font, characterSize) } { // РЎРѕР·РґР°РµРј С‚РµРєСЃС‚ РЅР° РєРЅРѕРїРєРµ
 
-        m_rect->setPosition(position); // Позиция
+        m_rect->setPosition(position); // РџРѕР·РёС†РёСЏ
         m_rect->setFillColor(sf::Color(200, 200, 200));
         m_rect->setOutlineColor(sf::Color::Black);
         m_rect->setOutlineThickness(2);

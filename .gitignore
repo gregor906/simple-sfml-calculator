@@ -36,3 +36,6 @@
 /*build*
 /include/doctest.h
 *.h
+Doxyfile
+/*html*
+/*docs*
